@@ -190,7 +190,7 @@ export default function PredictionForm({ modelId }: PredictionFormProps) {
               onChange={(e) => setBatchInput(e.target.value)}
               rows={6}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
-              placeholder="0.1,0.2,0.3,0.4,0.5&#10;0.2,0.3,0.4,0.5,0.6&#10;..."
+              placeholder={"0.1,0.2,0.3,0.4,0.5\n0.2,0.3,0.4,0.5,0.6\n..."}
             />
           </div>
 

@@ -16,7 +16,7 @@ class TestPredictor:
     """Test suite for Predictor."""
 
     @pytest.fixture
-    def trained_model_path(self):
+    def trained_model_path(self, tmp_path):
         """Create a trained model and return its path."""
         np.random.seed(42)
         X = np.random.rand(100, 5)
@@ -31,10 +31,9 @@ class TestPredictor:
         trainer = Trainer(model)
         trainer.fit(train_X, train_y, val_X, val_y, epochs=10, verbose=False)
 
-        with tempfile.TemporaryDirectory() as tmpdir:
-            model_path = Path(tmpdir) / "model.json"
-            trainer.save_model(model_path, loader)
-            yield model_path
+        model_path = tmp_path / "model.json"
+        trainer.save_model(model_path, loader)
+        return model_path
 
     def test_load_predictor(self, trained_model_path):
         """Test loading a predictor from file."""

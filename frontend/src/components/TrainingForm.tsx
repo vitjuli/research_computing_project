@@ -127,7 +127,7 @@ export default function TrainingForm({ onModelTrained }: TrainingFormProps) {
             onChange={(e) => setDataInput(e.target.value)}
             rows={6}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
-            placeholder="0.1,0.2,0.3,0.4,0.5,1.5&#10;0.2,0.3,0.4,0.5,0.6,2.0&#10;..."
+            placeholder={"0.1,0.2,0.3,0.4,0.5,1.5\n0.2,0.3,0.4,0.5,0.6,2.0\n..."}
           />
         </div>
 
